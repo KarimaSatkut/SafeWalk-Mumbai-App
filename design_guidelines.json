@@ -1,0 +1,68 @@
+{
+  "theme_and_archetype": {
+    "archetype": "Archetype 4: Swiss & High-Contrast (Adapted for Safety)",
+    "theme": "High-Contrast Night Mode",
+    "reasoning": "High-contrast is mandatory for low-literacy and emergency night use. Deep purple provides a calming night-mode base, pure white offers maximum legibility, and screaming red triggers immediate psychological urgency during SOS."
+  },
+  "typography": {
+    "headings_font": "Outfit",
+    "body_font": "Manrope",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-black tracking-tight",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "h3": "text-xl font-bold",
+      "body_large": "text-lg font-medium",
+      "body": "text-base font-normal",
+      "labels": "text-sm font-bold uppercase tracking-[0.2em]"
+    }
+  },
+  "colors": {
+    "normal_state": {
+      "background": "#1A0B2E", 
+      "surface": "#FFFFFF",
+      "primary": "#7C3AED",
+      "text_on_bg": "#FFFFFF",
+      "text_on_surface": "#1A0B2E",
+      "success_overlay": "rgba(34, 197, 94, 0.2)",
+      "warning_overlay": "rgba(234, 179, 8, 0.2)"
+    },
+    "sos_state": {
+      "background": "#DC2626",
+      "surface": "#991B1B",
+      "pulse": "#7F1D1D",
+      "text": "#FFFFFF"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Bottom-heavy, thumb-friendly. Everything critical must be reachable with one hand.",
+    "scale": "Generous (p-6, p-8) for readability. Giant tap targets.",
+    "sos_button": "Must occupy ~30% of screen height (e.g., h-[30vh]). Fixed at the bottom center, styled as a massive rounded rectangle or pill to prevent accidental misses.",
+    "map_view": "Full screen behind the UI (`absolute inset-0`). UI elements should sit on top as floating cards or bottom sheets with glassmorphism to show map context."
+  },
+  "components_strategy": {
+    "forms_and_onboarding": "Shadcn UI, modified for extreme contrast. Huge inputs (h-14). No tiny helper text.",
+    "navigation": "Floating bottom bar, hiding when SOS is active.",
+    "sos_trigger": "Press-and-hold (3 seconds) with circular progress fill OR shake gesture (implemented via logic).",
+    "discreet_mode": "Mock music player UI. Real album art. Play/pause buttons actually act as status checks or hidden triggers."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Stroke width 2.5 or 3 for maximum visibility. Large sizes (w-8 h-8 minimum for tap targets)."
+  },
+  "media": {
+    "mumbai_map_bg": "https://images.unsplash.com/photo-1687931139179-42dfd2101c44?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxNdW1iYWklMjBzdHJlZXQlMjBuaWdodHxlbnwwfHx8fDE3ODI1NDQ1ODR8MA&ixlib=rb-4.1.0&q=85",
+    "discreet_music_art": "https://images.pexels.com/photos/13069544/pexels-photo-13069544.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "volunteer_avatar_1": "https://images.unsplash.com/photo-1725033489648-a819750348eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwzfHxjb25maWRlbnQlMjBpbmRpYW4lMjB3b21hbiUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODIwMzgzMzh8MA&ixlib=rb-4.1.0&q=85",
+    "volunteer_avatar_2": "https://images.unsplash.com/photo-1463335361701-e90f4c5045d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwyfHxjb25maWRlbnQlMjBpbmRpYW4lMjB3b21hbiUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODIwMzgzMzh8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Build a mobile-first web app mimicking a React Expo mobile layout.",
+    "Implement the 'Walking Mode' dashboard with a full-screen map background.",
+    "The SOS Button MUST be ~30% of the viewport height (e.g., `h-[30vh]`) and prominent in Red. Placed at the bottom for easy thumb access.",
+    "Implement the SOS active state: pulsing red background, 10-sec cancel countdown, list of incoming volunteers with ETAs.",
+    "Implement Discreet Mode: A fake music player overlay using the provided album art.",
+    "Implement the Language Switcher (EN/HI/MR).",
+    "Use deep purple (#1A0B2E) for the normal dark mode background, and pure white for text/cards to ensure high contrast night use.",
+    "Ensure all buttons and interactive elements have `data-testid` attributes."
+  ]
+}
